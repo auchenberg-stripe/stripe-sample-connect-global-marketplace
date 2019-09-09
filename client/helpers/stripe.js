@@ -1,5 +1,5 @@
 import config from './config';
-import stripe from '../packages/stripe-node';
+import stipeNode from '../packages/stripe-node';
 
 let stripeSecretKey;
 
