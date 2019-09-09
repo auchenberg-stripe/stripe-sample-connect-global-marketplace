@@ -1,4 +1,5 @@
 import config from './config';
+import stripe from '../packages/stripe-node';
 
 let stripeSecretKey;
 
@@ -8,6 +9,6 @@ if (process.env.NODE_ENV === 'production') {
   stripeSecretKey = config.stripe.test.secretKey;
 }
 
-const stripe = require('../packages/stripe-node')(stripeSecretKey);
+const stripe = stipeNode(stripeSecretKey);
 
 export default stripe;
