@@ -8,6 +8,6 @@ if (process.env.NODE_ENV === 'production') {
   stripeSecretKey = config.stripe.test.secretKey;
 }
 
-const stripe = require('stripe')(stripeSecretKey);
+const stripe = require('../packages/stripe-node')(stripeSecretKey);
 
 export default stripe;
