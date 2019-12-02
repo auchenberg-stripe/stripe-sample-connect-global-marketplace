@@ -1,14 +1,7 @@
-import config from './config';
 import stipeNode from 'stripe';
 
-let stripeSecretKey;
+const env = require('dotenv').config({path: './.env'});
 
-if (process.env.NODE_ENV === 'production') {
-  stripeSecretKey = config.stripe.live.secretKey;
-} else {
-  stripeSecretKey = config.stripe.test.secretKey;
-}
-
-const stripe = stipeNode(stripeSecretKey);
+const stripe = stipeNode(process.env.STRIPE_SECRET_KEY);
 
 export default stripe;
